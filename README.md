@@ -177,6 +177,45 @@ You need to modify the following in the file [inference/react_agent.py](https://
 
 We provide benchmark evaluation scripts for various datasets. Please refer to the [evaluation scripts](./evaluation/) directory for more details.
 
+## WebUI - Graphical Interface for Research Tasks
+
+🔍 **NEW: DeepResearch WebUI** - A comprehensive web interface for configuring, running, and monitoring research tasks with an intuitive user experience.
+
+### Quick Launch WebUI
+
+```bash
+# From the DeepResearch root directory
+./launch_webui.sh
+# Or manually:
+cd webui && python run.py
+```
+
+Then open your browser to `http://localhost:8501`
+
+### WebUI Features
+
+✨ **Easy Configuration**
+- Model parameter adjustment (temperature, top-p, presence penalty)  
+- API key management with secure storage
+- Tool selection and configuration (search, visit, scholar, file parser, python)
+
+📝 **Flexible Input**
+- Manual question input with rich text editor
+- File upload support (JSON, JSONL, TXT, CSV)
+- Built-in sample questions for testing
+
+📊 **Real-time Monitoring**  
+- Live progress tracking during task execution
+- Detailed execution logs and status updates
+- Task cancellation and control
+
+📤 **Results Export**
+- Export results as formatted Markdown files
+- JSON export for programmatic access  
+- Task history with comparison tools
+
+See the [WebUI documentation](./webui/README.md) for detailed setup instructions and features.
+
 ## Deep Research Agent Family
 
 <p align="center">
