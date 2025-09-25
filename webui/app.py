@@ -17,7 +17,16 @@ from pathlib import Path
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 # Import research components
-from inference.react_agent import MultiTurnReactAgent
+try:
+    # Try importing the research components we'll need later
+    import sys
+    import os
+    inference_path = os.path.join(os.path.dirname(__file__), '..', 'inference')
+    if inference_path not in sys.path:
+        sys.path.append(inference_path)
+except ImportError:
+    pass  # Will handle in task manager when needed
+
 from webui.utils.task_manager import TaskManager
 from webui.utils.config_manager import ConfigManager
 from webui.components import sidebar, main_content, task_status

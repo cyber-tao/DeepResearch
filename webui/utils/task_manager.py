@@ -70,7 +70,11 @@ class TaskManager:
             self._log(task_id, f"Starting task with config: {json.dumps(config, indent=2)}")
             
             # Import agent here to avoid circular imports
-            from inference.react_agent import MultiTurnReactAgent
+            import sys
+            import os
+            inference_path = os.path.join(os.path.dirname(__file__), '..', '..', 'inference')
+            sys.path.append(inference_path)
+            from react_agent import MultiTurnReactAgent
             
             # Prepare LLM configuration
             llm_cfg = {
